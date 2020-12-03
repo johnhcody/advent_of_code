@@ -22,18 +22,3 @@ const twoSum = async() => {
 }
 
 twoSum().then(console.log);
-
-
-// const solve = async() => {
-//     const lines = await parseLines();
-//     const numbers = lines.map(Number);
-//     const numberSet = new Set();
-
-//     for (let number of numbers) {
-//         const difference = 2020 - number;
-//         if (numberSet.has(difference)) {
-//             return number * difference;
-//         }
-//         numberSet.add(number);
-//     }
-// }
