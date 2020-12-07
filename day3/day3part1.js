@@ -15,4 +15,7 @@ const countTrees = async () => {
     return treeCount
 };
 
-countTrees().then(console.log); // 167
+
+countTrees().then(console.log);
+
+// multiplyTrees([[1,1], [3,1], [5,1], [7,1], ]).then(console.log); // 167
