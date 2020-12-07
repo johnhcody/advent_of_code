@@ -1,24 +1,18 @@
-const fs = require("fs");
+const fs = require('fs');
 
-const treeCounter = async () => {
+const countTrees = async () => {
     const text = fs.readFileSync("./input.txt", "utf-8");
     const lines = text.split("\n");
-
-    let j = 3;
+    const lineLength = lines[0].length;
     let treeCount = 0;
-    let i = 1;
-    //console.log(lines.length);
-    //console.log(lines[2 % lines[0].length][6 % lines[0].length]);
-    while (i < lines.length + 3) {
-        const lineLength = lines[0].length;
-        if (lines[i % lineLength][j % lineLength] == "#") {
+    let j = 0;
+    for (let i = 0; i < lines.length; i++) {
+        if (lines[i][j % lineLength] == '#') {
             treeCount += 1;
         }
-        i += 1;
         j += 3;
     }
-    return treeCount;
+    return treeCount
+};
 
-}
-
-treeCounter().then(console.log);
+countTrees().then(console.log); // 167
