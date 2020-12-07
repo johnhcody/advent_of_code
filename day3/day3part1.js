@@ -8,8 +8,8 @@ const treeCounter = async () => {
     let treeCount = 0;
     let i = 1;
     //console.log(lines.length);
-    console.log(lines[2 % lines[0].length][6 % lines[0].length]);
-    while (i < lines.length + 1) {
+    //console.log(lines[2 % lines[0].length][6 % lines[0].length]);
+    while (i < lines.length + 3) {
         const lineLength = lines[0].length;
         if (lines[i % lineLength][j % lineLength] == "#") {
             treeCount += 1;
