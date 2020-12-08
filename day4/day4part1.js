@@ -22,6 +22,4 @@ const validatePassport = async () => {
     return counter;
 }
 
-
-
 validatePassport().then(console.log);
