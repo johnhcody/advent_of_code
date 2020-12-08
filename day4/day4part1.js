@@ -8,13 +8,6 @@ const validatePassport = async () => {
     console.log(lines[0].split(' '));
     let lineArr = [];
     lines.map(line => {
-        // if (line.includes("\n")) {
-        //     lineArr = line.split("/n").join(' ').split(' ');
-        //     console.log(lineArr);
-        // } else {
-        //     lineArr = line.split().join(' ').split(' ');
-        //     console.log(lineArr);
-        // }
         lineArr = line.split(/\s/);
         console.log(lineArr);
         let passportObj = {};
