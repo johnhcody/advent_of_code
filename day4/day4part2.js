@@ -17,7 +17,7 @@ const validatePassport = async () => {
             passportObj[key] = val;
         });
         if (Object.keys(passportObj).length == 8 || (Object.keys(passportObj).length == 7 && !Object.keys(passportObj).includes('cid'))) {
-            console.log(validColor(passportObj['hcl']))
+            //console.log(validColor(passportObj['hcl']))
             if (validBirthYear(passportObj['byr']) && validIssueYear(passportObj['iyr']) && validExpirationYear(passportObj['eyr']) && validHeight(passportObj['hgt']) && validColor(passportObj['hcl']) && validEyeColor(passportObj['ecl']) && validPassportNumber(passportObj['pid'])) {
                 counter ++;
             }
@@ -44,11 +44,12 @@ const validHeight = (hgt) => {
     const measurement = hgt.slice(hgt.length - 2);
     const num = hgt.slice(0, hgt.length - 2);
     if (measurement == "cm") {
-        return num >= 160 && num <= 193 ? true : false;
+        return num >= 150 && num <= 193 ? true : false;
     } else if (measurement == "in") {
         return num >= 59 && num <= 76 ? true : false;
+    } else {
+        return false;
     }
-    return false;
 }
 
 const validColor = (hcl) => {
@@ -69,7 +70,7 @@ const validColor = (hcl) => {
 
 const validEyeColor = (ecl) => {
     const colors = ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"];
-    return colors.includes(ecl) && ecl.length == 3 ? true : false;
+    return colors.includes(ecl) ? true : false;
 }
 
 const validPassportNumber = (pid) => {
